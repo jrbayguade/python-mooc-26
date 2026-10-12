@@ -1,0 +1,39 @@
+'''
+Please write a function named histogram, which takes a string as its argument. The function should print out a histogram 
+representing the number of times each letter occurs in the string. Each occurrence of a letter should be represented by 
+a star on the specific line for that letter.
+
+For example, the function call histogram("abba") should print out
+Sample output
+
+a **
+b **
+
+while histogram("statistically") should print out
+Sample output
+
+s **
+t ***
+a **
+i **
+c *
+l **
+y *
+
+'''
+
+def histogram(text: str):
+    counts = {}
+
+    for char in text:
+        counts[char] = counts.get(char, 0) + 1
+        
+    scores = {}
+    for char, count in counts.items():
+        scores[char] = '*' * count
+        
+    return scores
+
+
+print(histogram("abba"))
+print(histogram("statistically"))
